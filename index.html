@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>MTG Turn structure</title>
+</head>
+<body>
+  <nav id='navbar'>
+    <header id='nav-header'>Turn Structure</header>
+    <ul>
+      <li><a class='nav-link' href='#Introduction'>Introduction</a></li>
+      <li><a class='nav-link' href='#Beginning_phase'>Beginning phase</a></li>
+      <li><a class='nav-link' href='#Pre_combat_main_phase'>Pre combat main phase</a></li>
+      <li><a class='nav-link' href='#Combat_phase'>Combat phase</a></li>
+      <li><a class='nav-link' href='#Post_combat_main_phase'>Post combat main phase</a></li>
+      <li><a class='nav-link' href='#Ending_phase'>Ending phase</a></li>
+      <li><a class='nav-link' href='#Reference'>Reference</a></li>
+    </ul>
+  </nav>
+  <main id='main-doc'>
+    <h1 id='top'>Magic the Gathering reference manual</h1>
+    <section class='main-section' id='Introduction'>
+      <header>Introduction</header>
+      <p>This is a reference manual for your turn structure in a game of MTG. It assumes basic knowledge of the game and is intended to introduce players to some of the more detailed intricacies of the game.</p>
+      <p>However, this reference doesn't cover the entirety of the comprehensive rules as the document is too lengthy.</p>
+      <p>Consider these aspects when using this manual:</p>
+      <ul>
+        <li>For most casual games the quick guide provided <a href='https://magic.wizards.com/en/how-to-play'>here</a> is enough to play.</li>
+        <li>Sometimes it's faster and more amicable to ask experienced players around you, the community is here to help!</li>
+        <li>If you wish to review the Comprehensive Rules you can do so <a href='https://media.wizards.com/2022/downloads/MagicCompRules%2020220708.pdf'>here</a>.</li>   
+      </ul>
+      <code>Magic is a complex game, for every rule there's almost always an exception.</code>
+      <p>If you want a more interactve experience head out to <a href='https://judgeacademy.com/'>Judge Academy</a> to learn more and earn your certification.</p>
+    </section>
+    <section class='main-section' id='Beginning_phase'>
+      <header>Beginning phase</header>
+      <p>This phase is split into three parts:
+        <ul>
+          <li><div class='bold'>Untap:</div> First part of every turn, all tapped permanents able to untap do so. No players may gain priority during this phase.</li>
+          <li><div class='bold'> Upkeep:</div> "During your upkeep" effects are activated and paid for here, including costs, phase in, draws, etc. Players may use activated abilities and gain priority during this step.</li>
+          <li><div class='bold'>Draw:</div> Draw your card for the turn, except if it's the first turn and you're not playing 4v4 commander. "When you draw" effects are activated and players may gain priority.</li>
+        </ul>
+      <code>It's common for new players to forget the order U-U-D. In casual play, long as the order of the actions doesn't change the outcome of a play, this can be disregarded.</code>
+      </p>
+    </section>
+    <section class='main-section' id='Pre_combat_main_phase'>
+      <header>Pre combat main phase</header>
+      <p>During both main phases the active player may:</p>
+        <ul>
+          <li>Play a land per turn</li>
+          <li>Play permanents</li>
+          <li>Use activated abilities</li>
+          <li>Play sorceries and/or activate sorcery speed abilities</li>
+        </ul>
+      <code>After every action is put on the stack the non-active player(s) gain priority to respond. This includes the end of every phase.</code>
+    </section>
+    <section class='main-section' id='Combat_phase'>
+      <header>Combat phase</header>
+      <p>When viewed in depth this phase is farily complex and sometimes you'll need to address layer 7 in order to reolve effects overriding the stack.</p>
+      <p>The combat phase follows these steps:</p>
+      <ul>
+        <li><div class='bold'>Beginning of combat: </div>A player announces they wish to move into combat step. After all effects on the stack have been resolved and priority has been passed, combat may begin.</li>
+        <li><div class='bold'>Declare attackers: </div>The active player chooses which creatures will attack then passes priority.</li>
+        <li><div class='bold'>Declare blockers: </div> The defending player assigns blockers, any creature with a legal blocker assigned to it is considered to be blocked even if the blocker is destroyed before the damage step.</li>
+        <li><div class='bold'>Combat damage: </div>Creatures deal damage equal to their strenght, unless first or double strike is involved, all damage is done at the same time. Damage doesn't use the stack. Creatures dealt lethal damage are destroyed at the end of this step.</li>
+        <li><div class='bold'>End of combat: </div>There are no turn based actions in this step, players may gain priority, any creatures that attacked are still considered to be attacking as well as blockers. "At the end of combat" effects go into the stack.</li>
+      </ul>
+      <code>Effects that increase or decrease power and toughness follow the layer 7:
+        <ul id='layer-7'>
+          <li>Characteristic defining effects</li>
+          <li>Effects that set P/T to specific values</li>
+          <li>Effects that change P/T without setting specific values, eg. +1+1, -1,-1</li>
+          <li>Counters</li>
+          <li>P/T inversion</li>
+        </ul>
+      </code>
+      <p>Take into account the layer 7 when multiple effects apply to a creature even when not in combat.</p>
+      <p>Remember effects that "double" or "halve" a creature's P/T don't use the layer and are applied separately.</p>
+    </section>
+    <section class='main-section' id='Post_combat_main_phase'>
+      <header>Post combat main phase</header>
+      <p>The same structure and actions as with the pre-combat main phase is followed, except no combat follows this phase.</p>
+      <code>What happens if I didn't attack during the previous phase?<div id='to-clarify'>If no attackers were declared for any reason, the combat phase is still considered to have happened but you skip from the declare attackers step to the end of combat step. Therefore "at the beginning of combat" effects will always activate.</div></code>
+    </section>
+    <section class='main-section' id='Ending_phase'>
+      <header>Ending phase</header>
+      <p>This phase is divided into two steps</p>
+      <ul>
+        <li><div class='bold'>End step:</div>This is usually the last chance during the turn to perform actions, only instant speed spells and effects may be used. "At the beginning of the end step" abilities trigger. After the active player passes priority they may respond if a new spell or ability is put onto the stack.</li>
+        <li><div class='bold'>Cleanup step: </div>Spells and abilities may be used only if the conditions for state-based actions exist or if abilities have triggered. If needed, the active player discards to hand size. All damage dealt to permaments this turn is removed. Once all players pass priority on an empty stack another cleanup step triggers. If no more state-based actions nor abilities are triggered, the turn is over.</li>
+      </ul>
+    </section>
+    <section class='main-section' id='Reference'>
+      <header>Reference</header>
+      <p>We hope this manual is useful to you, remember you can check the <a href='https://media.wizards.com/2022/downloads/MagicCompRules%2020220708.pdf'>Comprehensive Rules</a> in case you need more specific info. Don't try to read it from beginning to end as your brain will literally melt.<p>
+    </section>
+  <a id='to-the-top' href='#top'>Take me back to the top.</a>
+  </main>
+</body>
